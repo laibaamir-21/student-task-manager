@@ -21,3 +21,10 @@ class TaskManager:
                 task['completed'] = True
                 return True
         return False
+
+    def delete_task(self, task_id):
+        for index, task in enumerate(self.tasks):
+            if task['id'] == task_id:
+                del self.tasks[index]
+                return True
+        return False
