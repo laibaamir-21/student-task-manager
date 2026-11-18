@@ -27,11 +27,14 @@ def handle_show(manager):
 
 
 def handle_complete(manager):
-    task_id = int(input('Task ID to complete: '))
-    if manager.complete_task(task_id):
-        print('Task marked as completed.')
-    else:
-        print('Task not found.')
+    try:
+        task_id = int(input('Task ID to complete: '))
+        if manager.complete_task(task_id):
+            print('Task marked as completed.')
+        else:
+            print('Task not found.')
+    except ValueError:
+        print('Error: please enter a valid numeric task ID.')
 
 
 def handle_delete(manager):
