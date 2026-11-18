@@ -11,3 +11,6 @@ class TaskManager:
         self.tasks.append(task)
         self._next_id += 1
         return task
+
+    def list_tasks(self):
+        return list(self.tasks)
