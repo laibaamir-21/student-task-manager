@@ -41,11 +41,14 @@ def handle_complete(manager):
 
 
 def handle_delete(manager):
-    task_id = int(input('Task ID to delete: '))
-    if manager.delete_task(task_id):
-        print('Task deleted.')
-    else:
-        print('Task not found.')
+    try:
+        task_id = int(input('Task ID to delete: '))
+        if manager.delete_task(task_id):
+            print('Task deleted.')
+        else:
+            print('Task not found.')
+    except ValueError:
+        print('Error: please enter a valid numeric task ID.')
 
 
 def main():

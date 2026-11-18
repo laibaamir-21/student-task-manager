@@ -28,6 +28,8 @@ class TaskManager:
         return False
 
     def delete_task(self, task_id):
+        if not isinstance(task_id, int) or task_id < 1:
+            raise ValueError('Task ID must be a positive number.')
         for index, task in enumerate(self.tasks):
             if task['id'] == task_id:
                 del self.tasks[index]
